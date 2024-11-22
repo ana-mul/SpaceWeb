@@ -10,21 +10,24 @@
   --blue-300: rgb(208, 214, 249);
   --white: rgb(255, 255, 255);
 }
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   max-width: 1200px;
   scroll-behavior: smooth;
+}
+
+/* HOME STYLES */
+.index-html {
   background-image: url(assets/home/background-home-desktop.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
 }
-
-/* HOME STYLES */
-header {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -36,9 +39,10 @@ header {
   margin: 10px;
   position: relative;
 }
-header img {
+.header-img {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 .nav-ul {
   display: flex;
@@ -51,6 +55,7 @@ header img {
   background-color: rgba(255, 255, 255, 0.09);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 .nav-li a {
   display: flex;
@@ -117,6 +122,7 @@ header img {
 }
 .hero-p {
   font-size: 15px;
+  text-align: justify;
   color: var(--blue-300);
   font-family: var(--font-Barlow);
   line-height: 20px;
@@ -128,6 +134,9 @@ header img {
   display: flex;
   justify-content: end;
   position: relative;
+}
+.explore-a {
+  text-decoration: none;
 }
 .btn-explore {
   display: flex;
@@ -152,13 +161,136 @@ header img {
   box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.689);
   backdrop-filter: blur(10px);
 }
-footer{
+footer {
   display: flex;
   justify-content: center;
   position: relative;
-  top:100px;
+  top: 100px;
 }
-footer p{
+footer p {
   color: var(--blue-300);
   font-family: var(--font-Bellefair);
+}
+
+/* DESTINATION STYLES */
+.destination-html {
+  background-image: url(assets/destination/background-destination-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.main-destination {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.destination-content-left {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: left;
+  width: 50%;
+  height: 30px;
+}
+.destination-h1 {
+  font-family: var(--font-Barlow);
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+.destination-num {
+  font-family: var(--font-Barlow);
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: rgb(91, 91, 91);
+}
+
+.destination-content-right {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 5px;
+  max-width: 50%;
+  height: auto;
+  margin-top:100px;
+}
+.destination-img-container {
+  width:50%;
+  height: auto;
+  position: absolute;
+  right:700px;
+  top: 0;
+}
+.destination-img {
+  width: 100%;
+  height: auto;
+}
+.destination-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  height: auto;
+  margin-left:100px;
+}
+.destination-ul {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  gap: 15px;
+  list-style: none;
+  color: var(--blue-300);
+  font-family: var(--font-Barlow);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.destination-li:hover {
+  color: var(--white);
+}
+.destination-h2 {
+  color: var(--white);
+  font-size: 80px;
+  font-weight: 300;
+  font-family: var(--font-Bellefair);
+  text-transform: uppercase;
+  max-width: 50%;
+}
+.destination-p{
+  font-size: 14px;
+  text-align: justify;
+  color: var(--blue-300);
+  font-family: var(--font-Barlow);
+  line-height: 20px;
+  font-weight: 100;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.destination-info-child{
+  display: flex;
+  flex-direction: space-between;
+  max-width: 60%;
+  gap:70px;
+}
+.destination-info-child h3{
+  font-family: var(--font-Barlow);
+  font-size: 10px;
+  color: var(--blue-300);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.destination-info-child p{
+  font-family: var(--font-Bellefair);
+  font-size: 18px;
+  color: var(--white);
+  text-transform: uppercase;
+
 }
