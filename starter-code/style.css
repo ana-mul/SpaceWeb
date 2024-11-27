@@ -161,15 +161,38 @@ body {
   box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.689);
   backdrop-filter: blur(10px);
 }
-footer {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 100px;
-}
-footer p {
-  color: var(--blue-300);
-  font-family: var(--font-Bellefair);
+
+/* RESPONSIVE TABLET HOME */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .hero {
+    position: relative;
+    top: 130px;
+    right: 0px;
+  }
+  .hero-h2 {
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-p {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .explore {
+    justify-content: center;
+  }
+  .btn-explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: 250px;
+    right: 0px;
+  }
 }
 
 /* DESTINATION STYLES */
@@ -217,13 +240,13 @@ footer p {
   gap: 5px;
   max-width: 50%;
   height: auto;
-  margin-top:100px;
+  margin-top: 100px;
 }
 .destination-img-container {
-  width:50%;
+  width: 50%;
   height: auto;
   position: absolute;
-  right:700px;
+  right: 700px;
   top: 0;
 }
 .destination-img {
@@ -236,7 +259,7 @@ footer p {
   gap: 10px;
   max-width: 100%;
   height: auto;
-  margin-left:100px;
+  margin-left: 100px;
 }
 .destination-ul {
   display: flex;
@@ -254,27 +277,27 @@ footer p {
   content: ""; /*empty*/
   position: absolute;
   top: 25px;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   height: 2px;
   background-color: var(--white);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 .destination-li.choose::after {
-  content: ""; 
+  content: "";
   opacity: 1;
 }
 .destination-li:hover::after {
   content: "";
   position: absolute;
   top: 25px;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.46);
 }
-.destination-btn{
+.destination-btn {
   background-color: transparent;
   border: none;
   color: var(--blue-300);
@@ -294,7 +317,7 @@ footer p {
   text-transform: uppercase;
   max-width: 50%;
 }
-.destination-p{
+.destination-p {
   font-size: 14px;
   text-align: justify;
   color: var(--blue-300);
@@ -305,25 +328,80 @@ footer p {
   height: auto;
   margin-bottom: 20px;
 }
-.destination-info-child{
+.destination-info-child {
   display: flex;
   flex-direction: space-between;
   max-width: 60%;
-  gap:70px;
+  gap: 70px;
 }
-.destination-info-child h3{
+.destination-info-child h3 {
   font-family: var(--font-Barlow);
   font-size: 10px;
   color: var(--blue-300);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.destination-info-child p{
+.destination-info-child p {
   font-family: var(--font-Bellefair);
   font-size: 18px;
   color: var(--white);
   text-transform: uppercase;
+}
 
+/* RESPONSIVE DESTINATION */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .destination-html {
+    background-image: url(assets/destination/background-destination-tablet.jpg);
+  }
+  .main-destination {
+    flex-direction: column;
+  }
+  .destination-content-right {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 50px;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+  .destination-img-container {
+    width: 50%;
+    position: static;
+  }
+  .destination-img {
+    width: 90%;
+  }
+  .destination-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 50%;
+    height: auto;
+    margin-left: 100px;
+  }
+  .destination-ul {
+    justify-content: left;
+    align-items: center;
+    gap: 25px;
+  }
+  .destination-h2 {
+    color: var(--white);
+    font-size: 80px;
+    font-weight: 300;
+    font-family: var(--font-Bellefair);
+    text-transform: uppercase;
+    max-width: 50%;
+  }
+  .destination-p {
+    text-align: left;
+    max-width: 70%;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .destination-info-child {
+    max-width: 100%;
+  }
 }
 
 /* CREW   */
@@ -339,10 +417,10 @@ footer p {
   flex-direction: column;
   position: relative;
 }
-.crew-content-top{
+.crew-content-top {
   display: flex;
   flex-direction: row;
-  gap:15px;
+  gap: 15px;
   justify-content: center;
   width: 50%;
   height: 30px;
@@ -362,7 +440,7 @@ footer p {
   letter-spacing: 2px;
   color: rgb(91, 91, 91);
 }
-.crew-content-bottom{
+.crew-content-bottom {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -371,9 +449,9 @@ footer p {
   height: auto;
   position: relative;
   top: 100px;
-  left:50px;
+  left: 50px;
 }
-.crew-content-bottom-left{
+.crew-content-bottom-left {
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -382,7 +460,7 @@ footer p {
   width: 100%;
   height: auto;
 }
-.content-bottom-left-info{
+.content-bottom-left-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -391,7 +469,7 @@ footer p {
   width: 60%;
   margin-bottom: 100px;
 }
-.role{
+.role {
   display: flex;
   font-family: var(--font-Bellefair);
   font-size: 24px;
@@ -400,7 +478,7 @@ footer p {
   color: grey;
   max-width: 100%;
 }
-.name{
+.name {
   font-family: var(--font-Bellefair);
   font-size: 40px;
   font-weight: 300;
@@ -408,7 +486,7 @@ footer p {
   color: var(--white);
   max-width: 100%;
 }
-.bio{
+.bio {
   font-family: var(--font-Barlow);
   font-size: 14px;
   font-weight: 300;
@@ -429,21 +507,21 @@ footer p {
   cursor: pointer;
   margin-bottom: 20px;
 }
-.list-btn{
-  width: 8px; 
+.list-btn {
+  width: 8px;
   height: 8px;
-  background-color: rgba(128, 128, 128, 0.467); 
-  border: none; 
-  border-radius: 50%; 
-  cursor: pointer; 
+  background-color: rgba(128, 128, 128, 0.467);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
-.list-li:first-child .list-btn{
+.list-li:first-child .list-btn {
   background-color: white;
 }
-.list-btn:hover{
-  background-color: rgba(255, 255, 255, 0.604); 
+.list-btn:hover {
+  background-color: rgba(255, 255, 255, 0.604);
 }
-.crew-content-bottom-right{
+.crew-content-bottom-right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -452,12 +530,52 @@ footer p {
   position: relative;
   bottom: 30px;
 }
-.crew-img{
+.crew-img {
   width: 60%;
   height: auto;
   mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, transparent 50%);
-  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, transparent 100%);
-} 
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0) 70%,
+    transparent 100%
+  );
+}
+
+/* RESPONSIVE CREW */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .crew-html {
+    background-image: url(assets/crew/background-crew-tablet.jpg);
+  }
+  .crew-content-bottom {
+    flex-direction: column;
+  }
+  .crew-content-bottom-left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .content-bottom-left-info {
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 50px;
+  }
+  .bio {
+    font-size: 17px;
+    line-height: 25px;
+  }
+  .list-ul {
+    margin-bottom: 50px;
+  }
+  .crew-content-bottom-right {
+    width: 100%;
+    height: auto;
+  }
+  .crew-img {
+    width: 50%;
+  }
+}
 
 /* TECHNOLOGY STYLES */
 .technology-html {
@@ -472,10 +590,10 @@ footer p {
   flex-direction: column;
   position: relative;
 }
-.tech-content-top{
+.tech-content-top {
   display: flex;
   flex-direction: row;
-  gap:15px;
+  gap: 15px;
   justify-content: center;
   width: 50%;
   height: 30px;
@@ -495,7 +613,7 @@ footer p {
   letter-spacing: 2px;
   color: rgb(91, 91, 91);
 }
-.tech-content-bottom{
+.tech-content-bottom {
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -503,7 +621,7 @@ footer p {
   width: 100%;
   height: auto;
 }
-.tech-container-btn{
+.tech-container-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -511,29 +629,29 @@ footer p {
   gap: 15px;
   width: auto;
 }
-.tech-btn{
-  width: 40px; 
+.tech-btn {
+  width: 40px;
   height: 40px;
-  background-color: transparent; 
-  border: 1px solid var(--white); 
-  border-radius: 50%; 
-  cursor: pointer; 
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
   font-family: var(--font-Bellefair);
   color: var(--white);
   font-size: 18px;
 }
-.tech-btn:focus{
+.tech-btn:focus {
   background-color: var(--white);
   color: var(--blue-900);
 }
-.tech-container-info{
+.tech-container-info {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 30%;
-  margin-left:20px;
+  margin-left: 20px;
 }
-.tech-info-h2-a{
+.tech-info-h2-a {
   font-family: var(--font-Bellefair);
   color: var(--blue-300);
   font-weight: 300;
@@ -541,14 +659,14 @@ footer p {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.tech-info-h2-b{
+.tech-info-h2-b {
   font-family: var(--font-Bellefair);
   color: var(--white);
   font-weight: 300;
   font-size: 30px;
   text-transform: uppercase;
 }
-.tech-info-p{
+.tech-info-p {
   font-family: var(--font-Barlow);
   font-size: 13px;
   font-weight: 300;
@@ -557,13 +675,83 @@ footer p {
   line-height: 20px;
   font-weight: 100;
 }
-.tech-container-img{
+.tech-container-img {
   display: flex;
   justify-content: end;
   margin-top: 30px;
   width: 50%;
 }
-.tech-img{
+.tech-img {
   width: 55%;
   height: auto;
+}
+
+/* RESPONSIVE TECHNOLOGY */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .technology-html {
+    background-image: url(assets/technology/background-technology-tablet.jpg);
+  }
+  .main-technology {
+    position: relative;
+  }
+  .tech-content-bottom {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    position: relative;
+  }
+  .tech-container-btn {
+    flex-direction: row;
+    position: absolute;
+    top: 360px;
+  }
+  .tech-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .tech-container-info {
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-left: 0;
+    margin-top: 80px;
+  }
+  .tech-info-h2-a {
+    font-size: 25px;
+  }
+  .tech-info-h2-b {
+    font-size: 40px;
+  }
+  .tech-info-p {
+    font-size: 17px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .tech-container-img {
+    justify-content: center;
+    width: 100%;
+  }
+  .tech-img {
+    width: 100%;
+  }
+}
+
+/* RESPONSIVE TABLET */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .index-html {
+    background-image: url(assets/home/background-home-tablet.jpg);
+  }
+  .header {
+    width: 100%;
+    height: auto;
+  }
+  .nav-ul {
+    left: 0px;
+    padding: 20px 50px 20px 100px;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 767px) {
 }

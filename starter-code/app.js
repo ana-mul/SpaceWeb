@@ -14,15 +14,14 @@ crewBtn.forEach((isClicked) => {
 const chooseDestination = document.querySelectorAll(".destination-li");
 
 chooseDestination.forEach((choose) => {
-  choose.addEventListener('click', () =>{
+  choose.addEventListener("click", () => {
     chooseDestination.forEach((b) => {
-      b.classList.remove('choose');
+      b.classList.remove("choose");
 
-      choose.classList.add('choose');
-    })
-  })
-  
-})
+      choose.classList.add("choose");
+    });
+  });
+});
 
 //API
 fetch("./data.json")
@@ -95,8 +94,20 @@ fetch("./data.json")
             technologies.name;
           document.querySelector(".tech-info-p").textContent =
             technologies.description;
-          document.querySelector(".tech-img").src =
-            technologies.images.portrait;
+
+          // images
+          const portraitImage = technologies.images.portrait;
+          const landscapeImage = technologies.images.landscape;
+
+          // select img
+          const techImageElement = document.querySelector(".tech-img");
+
+          // responsive
+          if (window.innerWidth >= 768 && window.innerWidth <= 1200) {
+            techImageElement.src = landscapeImage;
+          } else {
+            techImageElement.src = portraitImage;
+          }
         } else {
           console.log("Technology not found");
         }
