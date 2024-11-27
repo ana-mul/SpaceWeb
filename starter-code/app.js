@@ -1,3 +1,29 @@
+//CREW
+const crewBtn = document.querySelectorAll(".list-btn");
+crewBtn.forEach((isClicked) => {
+  isClicked.addEventListener("click", () => {
+    crewBtn.forEach((btn) => {
+      btn.style.backgroundColour = "";
+
+      isClicked.style.backgroundColor = "white";
+    });
+  });
+});
+
+//DESTINATION
+const chooseDestination = document.querySelectorAll(".destination-li");
+
+chooseDestination.forEach((choose) => {
+  choose.addEventListener('click', () =>{
+    chooseDestination.forEach((b) => {
+      b.classList.remove('choose');
+
+      choose.classList.add('choose');
+    })
+  })
+  
+})
+
 //API
 fetch("./data.json")
   .then((response) => {
@@ -37,14 +63,10 @@ fetch("./data.json")
           ?.addEventListener("click", () => updateDestinations(index));
       });
     } else if (currentPage === "crew") {
-    //crew 
+      //crew
       const updateCrew = (crewIndex) => {
-        if (crewIndex < 0 || crewIndex >= data.crew.length) {
-          console.log("Invalid crew index:", crewIndex);
-          return;
-        }
-
         const members = data.crew[crewIndex];
+
         if (members) {
           document.querySelector(".crew-img").src = members.images.webp;
           document.querySelector(".role").textContent = members.role;
@@ -57,11 +79,38 @@ fetch("./data.json")
 
       updateCrew(0);
 
-      ["commander", "mission-specialist", "pilot", "flight-engineer"].forEach((id, index) => {
-        document.getElementById(id)?.addEventListener("click", () => updateCrew(index));
+      ["commander", "mission-specialist", "pilot", "flight-engineer"].forEach(
+        (id, index) => {
+          document
+            .getElementById(id)
+            ?.addEventListener("click", () => updateCrew(index));
+        }
+      );
+    } else if (currentPage === "technology") {
+      //technology
+      const updateTechnology = (technologyIndex) => {
+        const technologies = data.technology[technologyIndex];
+        if (technologies) {
+          document.querySelector(".tech-info-h2-b").textContent =
+            technologies.name;
+          document.querySelector(".tech-info-p").textContent =
+            technologies.description;
+          document.querySelector(".tech-img").src =
+            technologies.images.portrait;
+        } else {
+          console.log("Technology not found");
+        }
+      };
+
+      updateTechnology(0);
+
+      ["vehicle", "spaceport", "capsule"].forEach((id, index) => {
+        document
+          .getElementById(id)
+          .addEventListener("click", () => updateTechnology(index));
       });
     } else {
-      console.log("Página no reconocida.");
+      console.log("Page not found");
     }
   })
   .catch((error) => {
