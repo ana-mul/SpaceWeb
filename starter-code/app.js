@@ -23,6 +23,27 @@ chooseDestination.forEach((choose) => {
   });
 });
 
+//TOGGLE MENU MOBILE
+const toggleOpen = document.getElementById("menu-toggle");
+const toggleClose = document.getElementById("menu-close");
+const navBar = document.querySelector(".nav-bar");
+
+const toggleMenu = () => {
+  const navBarStyle = getComputedStyle(navBar).display;
+  if (navBarStyle === "none") {
+    navBar.style.display = "flex";
+    toggleClose.style.display = "block";
+    toggleOpen.style.display = "none";
+  } else {
+    navBar.style.display = "none";
+    toggleClose.style.display = "none";
+    toggleOpen.style.display = "block";
+  }
+};
+
+toggleOpen.addEventListener("click", toggleMenu);
+toggleClose.addEventListener("click", toggleMenu);
+
 //API
 fetch("./data.json")
   .then((response) => {
@@ -103,7 +124,7 @@ fetch("./data.json")
           const techImageElement = document.querySelector(".tech-img");
 
           // responsive
-          if (window.innerWidth >= 768 && window.innerWidth <= 1200) {
+          if (window.innerWidth <= 1200) {
             techImageElement.src = landscapeImage;
           } else {
             techImageElement.src = portraitImage;
